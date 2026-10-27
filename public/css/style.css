@@ -1,0 +1,239 @@
+/* --- Global Settings --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f4f7f6; 
+}
+
+/* --- Header Banner Image (The Logo) --- */
+.header-logo {
+    height: 85px; /* SIZED UP to match the scale of the third picture */
+    width: auto;
+    border-radius: 6px;
+    box-shadow: none;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    background-color: #3bb54a; /* LOCKED IN the lighter green color. No blending! */
+    display: flex;
+    align-items: center;
+    padding: 15px 60px; /* Keeps the logo pinned exactly to the left side */
+    position: relative; /* This is the anchor that allows the buttons to center */
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+/* --- Navigation Links (The Buttons) --- */
+.nav-links {
+    /* This forces the buttons into the exact dead-center of the screen */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 25px; /* Added a bit more breathing room between buttons */
+    font-weight: 800; /* Bolder text to match the third picture */
+    font-size: 1.15rem; /* SIZED UP the text so it stands out more */
+    letter-spacing: 0.5px;
+}
+
+.nav-links a.active {
+    color: #ffeb3b; 
+}
+
+/* --- Hero Section --- */
+.hero {
+    display: flex;
+    position: relative;
+    min-height: 80vh;
+    background-color: #2ea347;
+    overflow: hidden; 
+}
+
+.hero-content {
+    flex: 1;
+    padding: 0 60px;
+    color: white;
+    z-index: 2; 
+    max-width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #a6d764, #84c03b);
+    color: white;
+    padding: 15px 35px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    width: max-content;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+/* --- The Right Side Image --- */
+.hero-image-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 65%; /* Covers the right side of the screen */
+    height: 100%;
+    
+    /* Your new real-life branch photo */
+    background-image: url('https://scontent.fmnl4-5.fna.fbcdn.net/v/t39.30808-6/543222282_122109000296989890_7548064727671163733_n.jpg?stp=dst-jpg_tt6&cstp=mx721x960&ctp=s721x960&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=QassayQr-T8Q7kNvwHOTzRt&_nc_oc=Adq72hypnvH0r-NyyPD3qClOIygHyZRSnOmcLINpEA3yO52Lx9_mlFKQm6opzn79-vtNth4wkWlpd1v3QNl87qfN&_nc_zt=23&_nc_ht=scontent.fmnl4-5.fna&_nc_gid=39EFrCKefaZuOHdywdXtOQ&_nc_ss=7b289&oh=00_AQJC3eVhoBIisWKGfcfU9vJ0F9OqtwRLSm1X03jl39gR0Q&oe=6A99F418'); 
+    
+    background-size: cover;
+    background-position: center 40%; /* Adjusts the photo slightly so the glowing sign is visible */
+    z-index: 1;
+}
+
+/* This creates the smooth fade from solid green into your real photo */
+.gradient-fade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #2ea347 5%, rgba(46, 163, 71, 0) 100%);
+}
+
+/* --- Branch Selection Cards --- */
+.dashboard-section {
+    padding: 60px;
+    text-align: center;
+}
+
+.dashboard-section h2 {
+    color: #125721;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+.branch-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.branch-card {
+    background-color: white;
+    border-radius: 12px;
+    width: 320px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.branch-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.branch-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 4px solid #2ea347;
+}
+
+.card-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content h3 {
+    color: #2ea347;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+.btn-secondary {
+    display: block;
+    background-color: #2ea347;
+    color: white;
+    padding: 10px 0;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+    background-color: #125721;
+    color: white;
+}
+.page-bg {
+  background-color: #f4f7f6;
+}
+
+.page-title {
+  color: #125721;
+  font-weight: 800;
+}
+
+.btn-green {
+  background-color: #2ea347;
+  font-weight: bold;
+}
+
+.summary-card {
+  border-top: 5px solid #2ea347;
+  border-radius: 10px;
+}
+
+.card-title-green {
+  color: #2ea347;
+  font-weight: bold;
+}
+
+.badge-green {
+  background-color: #2ea347;
+  font-size: 0.9rem;
+}
